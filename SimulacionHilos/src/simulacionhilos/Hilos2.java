@@ -17,16 +17,9 @@ public class Hilos2 extends Thread {
  private String nombre;
  private  int tiempo;
  JPanel panel;
- public int iteracion;
+ public  int iteracion2;
  
- public int getIteracion() {
-        return iteracion;
-    }
 
-    public void setIteracion(int iteracion) {
-        this.iteracion = iteracion;
-    }
- 
  public Hilos2(String nombre,int tiempo,JPanel p){
 
      this.tiempo=tiempo;
@@ -34,7 +27,15 @@ public class Hilos2 extends Thread {
      this.panel=p;
  }
 
-    
+    public int getIteracion2() {
+        System.out.println("Publicadno lo que retorna el get 2: " + iteracion2
+        );
+        return iteracion2;
+    }
+
+    public void setIteracion2(int iteracion) {
+        this.iteracion2 = iteracion;
+    }
  
  
  public void run(){
@@ -52,10 +53,15 @@ public class Hilos2 extends Thread {
          x=400;
          y+=60;
      }
-     iteracion++;
+     iteracion2++;
+     setIteracion2(iteracion2);
+//         System.out.println("iteracion hilo 2: " +iteracion2);
      }
      
+    
  }
+  
+ 
  
 }
 

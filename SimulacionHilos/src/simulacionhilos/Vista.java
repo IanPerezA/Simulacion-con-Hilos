@@ -5,6 +5,8 @@
  */
 package simulacionhilos;
 
+import jdk.nashorn.internal.ir.BreakNode;
+
 /**
  *
  * @author Ian_I
@@ -110,15 +112,17 @@ public class Vista extends javax.swing.JFrame {
 
 Hilos h1 = new Hilos ("Acceso1",300,PanelSimulacion);
 h1.start();
-int Gallo1= h1.getIteracion();
+int Gallo1 = h1.getIteracion();
+        System.out.println("obtencion1= "+Gallo1);
 
 Hilos2 h2= new Hilos2("Acceso2",200,PanelSimulacion);
 h2.start();
-int gallo2=h2.getIteracion();
-        System.out.println(gallo2);
+int gallo2=h2.getIteracion2();
+        System.out.println("Obtencion hilo 2: "+ gallo2);
 if((Gallo1+gallo2)==50){
-h1.interrupt();
-h2.interrupt();
+h1.stop();
+h2.stop();
+
 }
 
     }//GEN-LAST:event_btnSimulacionActionPerformed

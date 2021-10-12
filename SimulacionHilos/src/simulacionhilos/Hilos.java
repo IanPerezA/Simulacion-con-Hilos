@@ -10,18 +10,18 @@ public class Hilos extends Thread {
  private String nombre;
  private  int tiempo;
  JPanel panel;
- public int iteracion=0;
+ public static int iteracion =0;
  
  public Hilos(String nombre,int tiempo,JPanel p){
      this.tiempo=tiempo;
      this.nombre=nombre;
      this.panel=p;
  }
-
-    public int getIteracion() {
+ public int getIteracion() {
+        System.out.println("Publicando lo que retorna el get 1:" + iteracion);
         return iteracion;
+        
     }
-
     public void setIteracion(int iteracion) {
         this.iteracion = iteracion;
     }
@@ -43,8 +43,11 @@ public class Hilos extends Thread {
          y+=60;
      }
      iteracion++;
+    setIteracion(iteracion);
+//         System.out.println("Iteracion hilo 1: "+ iteracion);
      }
-     
  }
  
+   
+
 }
